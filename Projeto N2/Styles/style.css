@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #7063F0;
+    --primary-color-light: #D7D3FF;
+    --primary-color-super-light: #E7E5FF;
+    --gray-color-1: #2D2D2D;
+    --gray-color-2: #555555;
+    --background: #F3F2FF;
+}
+
+body {
+    max-width: 1920px;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+}
+
+header {
+    background-color: var(--background);
+    border-bottom: 1px solid var(--primary-color-light);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+header h2 {
+    color: var(--primary-color);
+}
+
+.taskbar h3 {
+    font-weight: 600;
+}
+
+.taskbar {
+    display: flex;
+    justify-content: center;
+    max-width: 965px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--primary-color-light);}
+
+
+.taskbar input {
+    font-family: "Poppins";
+    background-color: var(--primary-color-super-light);
+    color: var(--primary-color);
+    width: 784px;
+    height: 60px;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    font-size: 15px;
+    text-indent: 18px;
+    margin-top: 18px;
+    margin-right: 10px;
+}
+
+.taskbar input:focus {
+    outline: var(--primary-color);
+}
+
+.taskbar input::placeholder {
+    color: var(--primary-color)
+}
+
+.taskbar button {
+    border: 0;
+    cursor: pointer;
+    font-family: "Poppins";
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 12px;
+    width: 124px;
+    height: 60px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 965px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.tasks {
+    display: flex;
+    padding: 20px;
+    padding-bottom: 0px;
+    justify-content: space-between;
+}
+
+.tasks h3, .tasks h4 {
+    font-weight: 600;
+}
+
+.tasks h4 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.tasks p {
+    color: var(--gray-color-2);
+}
+
+.tasks strong {
+    color: #02AF75;
+    font-weight: 600;
+}
+
+.taskBox {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    max-width: 900px;
+    padding: 18px;
+    justify-content: space-between;
+    background-color: var(--primary-color-super-light);
+    border: 1px solid var(--primary-color);
+    border-radius: 13px;
+}
+
+.taskBox i{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+}
+
+.taskContent {
+    display: flex;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #02AF75;
+  border: 2px solid #00895c;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  
+
+}
+
+.taskText {
+    margin-left: 20px;
+    color: var(--primary-color)
+}
+
+.taskText h4 {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.taskText p {
+    color: var(--gray-color-2);
+}
+
+/* Quando não haver nada na página */
+
+.emptyness {
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 965px;
+    padding: 20px;
+}
+
+.emptyness strong {
+    font-weight: 600
+}
+
+#emoji {
+    width: 55px;
+    font-size: 40px;
+    display: inline-block;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+<body>
+    <header>
+        <h2>TodoList</h2>
+        <p id="bomx">Bom dia,  <strong>Luiz Otávio</strong>💣</p>
+    </header>
+
+    <main>
+        <section class="taskbar">
+            <div class="addTask">
+                <h3>Adicionar Tarefas</h3>
+                <form id="taskForm" class="add">
+                    <input type="text" id="taskName" placeholder="Nome da Tarefa" required>
+                    <button type="submit">Adicionar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="taskCount" class="tasks">
+            <div class="tasTitle">
+                <h3>Minhas Tarefas</h3>
+                <p>Veja todas as suas tarefas criadas na plataforma.</p>
+            </div>
+            <h4 id="counter"><!--- Inserir o coiso das tarefas depois ---></h4>
+        </section>
+
+        <section id="mainBox">
+            <div class="emptyness" id="emptyness">
+                <span id="emoji" class="empty">😭</span>
+                <p class="empty"><strong>Nenhum registro encontrado!</strong></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../Scripts/Script.js"></script>
+</body>
+</html>
