@@ -132,6 +132,7 @@ main {
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 5px;
+    cursor: pointer;
 }
 
 .taskContent {
