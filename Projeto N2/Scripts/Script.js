@@ -1,9 +1,16 @@
 const agora = new Date();
+const form = document.getElementById("taskForm");
+let checks = document.getElementsByClassName("check");
+
+const tasks = [];
+
+let emptyness = document.getElementById("emptyness");
+let emptycopy = emptyness;
 
 window.onload = function() {
     let time = agora.getHours();
 
-    let bomx = this.document.getElementById("bomx");
+    let bomx = document.getElementById("bomx");
 
     if (time >= 0 && time <= 12) {
         bomx.innerHTML = "<p>Bom dia,  <strong>Luiz Otávio</strong>💣</p>";
@@ -12,14 +19,24 @@ window.onload = function() {
     } else {
         bomx.innerHTML = "<p>Boa noite,  <strong>Luiz Otávio</strong>💣</p>";
     }
+
+    let taskslocal = JSON.parse(localStorage.getItem("tasks"));
+
+    for(let i = 0; i < taskslocal.length; i++){
+        tasks.push(taskslocal[i])
+        add(taskslocal[i])
+    }
+
+    if (tasks.length != 0){
+        if (emptyness) {
+        emptyness.remove();
+        }
+    }
 }
 
-const form = document.getElementById("taskForm");
-let checks = document.getElementsByClassName("check");
-const tasks = [];
-
-let emptyness = document.getElementById("emptyness");
-let emptycopy = emptyness;
+function setStorage(){
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -41,6 +58,10 @@ form.addEventListener("submit", function(e) {
         emptyness.remove();
     }
 
+    add(task);
+})
+    function add(task){
+        
     const completed = tasks.filter(task => task.done == true).length;
     
     let counter = document.getElementById("counter");
@@ -71,6 +92,10 @@ form.addEventListener("submit", function(e) {
     check.setAttribute("class", "check");
     taskContent.append(check);
 
+    if (task && task.done) {
+        check.checked = true;
+    }
+
     let taskText = document.createElement("div");
     taskText.setAttribute("class", "taskText");
     taskContent.append(taskText);
@@ -81,6 +106,13 @@ form.addEventListener("submit", function(e) {
 
     let p = document.createElement("p");
     p.innerHTML = `Criado em: ${task.data}`;
+
+    if (task && task.done) {
+        p.innerHTML = `Concluída em: ${task.data}`;
+        taskBox.style.backgroundColor = '#E4FFF6';
+        taskBox.style.border = '1px solid #02AF75';
+        h4.style.color = '#02AF75';
+    }
 
     taskText.append(h4);
     taskText.append(p);
@@ -109,6 +141,7 @@ form.addEventListener("submit", function(e) {
                     box.style.backgroundColor = '#E4FFF6'; 
                     box.style.border = '1px solid #02AF75'; 
                     taskTitle[i].style.color =  '#02AF75';
+                    setStorage();
                 }
             } else {
                 if (confirmed) confirmed.innerHTML = `Criado em: ${tasks[i].data}`;
@@ -116,6 +149,7 @@ form.addEventListener("submit", function(e) {
                     box.style.backgroundColor = '';
                     box.style.border = '';
                     taskTitle[i].style.color =  ''
+                    setStorage();
                 }
             }
         });
@@ -160,8 +194,9 @@ form.addEventListener("submit", function(e) {
                 const counterToRemove = document.getElementById("counter");
                 if (counterToRemove) counterToRemove.remove();
             }
+            setStorage();
         });
     });
-
+    setStorage()
     form.reset();
-});
+}
