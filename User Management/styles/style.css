@@ -40,7 +40,7 @@ body {
 .title button {
     background-color: var(--primary-color);
     height: 30px;
-    width: 7px;
+    width: 5px;
     border: 0;
     border-radius: 10px;
     margin-right: 10px;
@@ -56,6 +56,7 @@ body {
     border-radius: 7px;
     padding: 12px;
     padding-right: 20px;
+    cursor: pointer;
 }
 
 .global_header i {
@@ -138,6 +139,7 @@ body {
     background-color: transparent;
     padding: 10px 40px 10px 40px;
     margin-right: 7px;
+    cursor: pointer;
 }
 
 .exc {
@@ -148,4 +150,22 @@ body {
     color: var(--secondary-color);
     background-color: transparent;
     padding: 10px 40px 10px 40px;
+    cursor: pointer;
+}
+
+/* Quando não houver nada na página */
+
+.emptyness {
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 965px;
+    padding: 20px;
+}
+
+.emptyness i {
+    font-size: 55px;
+    margin-bottom: 10px;
 }
